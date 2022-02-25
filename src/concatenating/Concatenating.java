@@ -1,5 +1,8 @@
 package concatenating;
 
+import java.util.Scanner;
+import java.math.*;
+
 //Take the number 192 and multiply it by each of 1, 2, and 3:
 //192 × 1 = 192
 //192 × 2 = 384
@@ -13,21 +16,23 @@ package concatenating;
 		
 public class Concatenating {
 	
+	
 	public static long concatenating() {
-		long product = 0;
-		
+		Scanner in = new Scanner(System.in);
+		long product = in.nextLong();
+		StringBuilder pandigital = new StringBuilder();
+		long temp = 0;
+
 		for(int i =0; i< 9999; i++) {
-			String pandigital = "";
-			
-			for(int n = 1; n<9999; n++) {
-				pandigital = pandigital + (i*n);
+			temp = product * i; 
+				pandigital = pandigital.append(temp);
 				
 				if(pandigital.length() >= 9) 
 					break;
 			}
 			
-		}
 		return product; 
+		//System.out.println(pandigital);
 	}
 	
 	public static void main(String args[]) {
